@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new task...</title>
+</head>
+<body>
+    <form action="/todo" method="POST">
+        <section>
+            <div>
+                <label for="task">Task: </label>
+                <input type="text" id = "task" name="task">
+            </div>
+            <div>
+                <label for="taskStatus">Task Status: </label>
+                <select name="taskStatus" id="taskStatus">
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+            </div>
+            <div>
+                <button>
+                    Create task
+                </button> 
+            </div>
+            
+        </section>
+    </form>
+</body>
+</html>

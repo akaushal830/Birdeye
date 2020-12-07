@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <section>
+        <ul>
+            <% for(t of tasks) { %>
+                <li><b><%= t.task %> <%= t.taskStatus %></li>
+                <a href = '/todo/<%= t.taskId%>'>Details</a>
+            <% } %>
+        </ul>
+        <a href = '/todo/createtask'>Create new task</a>
+    </section>
+</body>
+</html>
