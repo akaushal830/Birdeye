@@ -15,6 +15,7 @@
             <th>Task Creation Date</th>
             <th>Task Last Modified Date</th>
             <th>Task Completion Date</th>
+            <th>Edit</th>
         </tr>
         <tr>
             <td><%= task.taskId %></td>
@@ -22,6 +23,7 @@
             <td><%= task.taskCreationDate %></td>
             <td><%= task.taskLastModified %></td>
             <td><%= task.taskCompletionDate %></td>
+            <td><a href="/todo/<%= task.taskId %>/edit">Edit Task</a></td>
         </tr>
     </table>
     <a href="/task/<%= task.taskId%>/edittask" </body>

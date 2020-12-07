@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
 const { v4: uuid } = require('uuid');
+const methodOverride = require('method-override')
+
 
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -54,4 +57,22 @@ app.get('/todo/:id' , (req , res) => {
     console.log(task);
     res.render('todos/showdetails' , { task });
 });
+
+app.get('/todo/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const task = tasks.find(t => t.taskId === id);
+    res.render('todos/edit', { task });
+})
+
+app.patch('/todo/:id', (req, res) => {
+    const { id } = req.params;
+    const newTask = tasks.find(t => t.taskId === id);
+
+    const updatedTask = req.body.task;
+    const updatedStatus = req.body.taskStatus;
+    
+    newTask.task = updatedTask;
+    newTask.taskStatus = updatedStatus;
+    res.redirect('/todo');
+})
 
