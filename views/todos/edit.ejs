@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="/styles/todo_style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Task</title>
 </head>
 <body>
+    <header class="navbar">
+        <span id="logo">
+            <a href="/todo">My ToDo</a>
+        </span>
+        <span id="navlinks">
+            <span id="navlink1">
+                <a href="/todo">All Tasks</a>
+            </span>
+            <span id="navlink2">
+                <a href="/todo/createtask">New Task</a>
+            </span>
+        </span>
+        <span id="pinfo">
+            Abhishek
+        </span>
+    </header>
     <form action = "/todo/<%=task.taskId%>?_method=PATCH" method="POST">
-        <section>
+        <section class="ctask">
             <div>
                 <label for="task">Task: </label>
-                <input type="text" id = "task" name="task" value="<%= task.task %>">
             </div>
             <div>
-                <label for="taskStatus">Task Status: </label>
-                <select name="taskStatus" id="taskStatus">
+                <textarea id = "task" name="task">
+                    <%= task.task %>
+                </textarea>
+            </div>
+            <div>
+                <label for="taskstatus">Task Status: </label>
+                <select name="taskStatus" id="taskstatus">
                 <option value="Completed">Completed</option>
                 <option value="Pending">Pending</option>
             </select>
             </div>
             <div>
-                <button>
+                <button class="ctbutton">
                     Edit task
                 </button> 
             </div>

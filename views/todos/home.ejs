@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="/styles/todo_style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Todo Home</title>
 </head>
 <body>
-    <section>
-        <ul>
+    <header class="navbar">
+        <span id="logo">
+            <a href="/todo">My ToDo</a>
+        </span>
+        <span id="navlinks">
+            <span id="navlink1">
+                <a href="/todo">All Tasks</a>
+            </span>
+            <span id="navlink2">
+                <a href="/todo/createtask">New Task</a>
+            </span>
+        </span>
+        <span id="pinfo">
+            Abhishek
+        </span>
+    </header>
+    <section class="lists">
             <% for(t of tasks) { %>
-                <li><b><%= t.task %> <%= t.taskStatus %></li>
-                <a href = '/todo/<%= t.taskId%>'>Details</a>
+                <% if(t.taskStatus === 'Pending'){ %>
+                    <div class="pending card" id="pc" onclick="showDetails('<%= t.taskId %>')"><%= t.task %></div>
+                    <!-- <a href = '/todo/<%= t.taskId%>' >Details</a> -->
+                <% } %>
+                <% if(t.taskStatus === 'Completed'){ %>
+                    <div class="completed card" id="pc"><%= t.task %></div>
+                    <!-- <a href = '/todo/<%= t.taskId%>'>Details</a> -->
+                <% } %>
             <% } %>
-        </ul>
-        <a href = '/todo/createtask'>Create new task</a>
     </section>
+    <script src="/scripts/todo_scripts.js"></script>
 </body>
 </html>

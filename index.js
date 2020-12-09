@@ -6,6 +6,8 @@ const methodOverride = require('method-override')
 
 const app = express();
 
+app.use(express.static(__dirname + '/views'));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -23,7 +25,6 @@ let tasks = [
         task : 'Complete an assignment',
         taskStatus : 'Pending',
         taskCreationDate: new Date(),
-        taskCompletionDate: undefined,
         taskLastModified: new Date()
     },
     {
@@ -31,7 +32,6 @@ let tasks = [
         task : 'Play games',
         taskStatus : 'Pending',
         taskCreationDate: new Date(),
-        taskCompletionDate: undefined,
         taskLastModified: new Date()
     }
 ];
@@ -43,7 +43,7 @@ app.get('/todo' , (req , res) => {
 
 app.post('/todo' , (req , res) => {
     const { task , taskStatus} = req.body;
-    tasks.push({ task , taskStatus , taskId : uuid() , taskCreationDate : new Date() , taskLastModified : new Date()});
+    tasks.push({ task , taskStatus , taskId : uuid() , taskCreationDate : new Date() , taskLastModified : new Date() });
     res.redirect('/todo');
 });
 
@@ -62,7 +62,7 @@ app.get('/todo/:id/edit', (req, res) => {
     const { id } = req.params;
     const task = tasks.find(t => t.taskId === id);
     res.render('todos/edit', { task });
-})
+});
 
 app.patch('/todo/:id', (req, res) => {
     const { id } = req.params;
@@ -73,6 +73,7 @@ app.patch('/todo/:id', (req, res) => {
     
     newTask.task = updatedTask;
     newTask.taskStatus = updatedStatus;
+    newTask.taskLastModified = new Date();
     res.redirect('/todo');
-})
+});
 

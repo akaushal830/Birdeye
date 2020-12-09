@@ -2,13 +2,55 @@
 <html lang="en">
 
 <head>
+    <link href="/styles/todo_style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Details</title>
 </head>
 
 <body>
-    <table border="1">
+    <header class="navbar">
+        <span id="logo">
+            <a href="/todo">My ToDo</a>
+        </span>
+        <span id="navlinks">
+            <span id="navlink1">
+                <a href="/todo">All Tasks</a>
+            </span>
+            <span id="navlink2">
+                <a href="/todo/createtask">New Task</a>
+            </span>
+        </span>
+        <span id="pinfo">
+            Abhishek
+        </span>
+    </header>
+    <section class="ctask">
+        <div>
+            <span class="info">Task ID: </span><span><%= task.taskId %></span>
+        </div>
+        <div>
+            <span class="info">Task: </span><span><%= task.task %></span>
+        </div>
+        <div>
+            <span class="info">Task Status: </span><span><%= task.taskStatus %></span>
+        </div>
+        <div>
+            <span class="info">Task Creation Date: </span><span><%= task.taskCreationDate %></span>
+        </div>
+        <div>
+            <span class="info">Task Last Modified Date: </span><span><%= task.taskLastModified %></span>
+        </div>
+        <div id="edb" onclick="editDetails('<%= task.taskId %>')">
+            <!-- <a href="/todo/<%= task.taskId %>/edit">Edit Task</a> -->
+            Edit Task
+        </div>
+        
+    </section>
+   <!--
+       <table border="1">
         <tr>
             <th>Task ID</th>
             <th>Task</th>
@@ -22,10 +64,11 @@
             <td><%= task.task %></td>
             <td><%= task.taskCreationDate %></td>
             <td><%= task.taskLastModified %></td>
-            <td><%= task.taskCompletionDate %></td>
             <td><a href="/todo/<%= task.taskId %>/edit">Edit Task</a></td>
         </tr>
     </table>
-    <a href="/task/<%= task.taskId%>/edittask" </body>
+   --> 
+   <script src="/scripts/todo_scripts.js"></script>
+</body>
 
 </html>

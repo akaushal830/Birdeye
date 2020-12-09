@@ -1,0 +1,294 @@
+.lists{
+    background-color: azure;
+}
+
+.navbar{
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 0px;
+    font-size: 32px;
+    background-color: rgb(161, 182, 126);
+    display: flex;
+    justify-content: center;
+}
+
+
+#logo{
+    text-align: left;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    transition: background-color 0.5s;
+}
+
+#logo:hover{
+    background-color: rgb(214, 252, 150);
+}
+
+#navlinks{
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    border: 1px solid yellow;
+}
+
+#navlink1{
+    transition: background-color 0.5s;
+}
+
+#navlink1:hover{
+    background-color: rgb(214, 252, 150);
+}
+
+#navlink2{
+    transition: background-color 0.5s;
+}
+
+#navlink2:hover{
+    background-color: rgb(214, 252, 150);
+}
+
+.card{
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 5%;
+}
+
+.pending{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: brown;
+    transition: background-color 0.5s;
+    color: honeydew;
+}
+
+.pending:hover{
+    background-color: lightcoral;
+}
+
+.completed{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: cadetblue;
+    transition: background-color 0.5s;
+    color: honeydew;
+}
+
+.completed:hover{
+    background-color: rgb(27, 72, 109);
+}
+
+.newtask{
+    background-color: cornsilk;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.5s;
+}
+
+.newtask:hover{
+    background-color: rgb(186, 196, 173);
+    color: green;
+}
+
+.ctask{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    background-color: lightcyan;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 180px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 220px;
+}
+
+.ctbutton{
+    margin-top: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    width: 500px;
+    height: 50px;
+    background-color: cadetblue;
+    border-radius: 5%;
+}
+
+.ctbutton:hover{
+    background-color: rgb(147, 209, 211);
+    border-radius: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#taskstatus{
+    width: 300px;
+    height: 50px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    text-align: center;
+}
+
+#task{
+    width: 500px;
+    height: 100px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    text-align: start;
+}
+
+.info{
+    text-align: left;
+}
+
+#edb{
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: cadetblue;
+    transition: background-color 0.5s;
+    color: honeydew;
+    border-radius: 5%;
+}
+
+#edb:hover{
+    background-color: rgb(27, 72, 109);
+}
+
+@media(max-width: 1060px)
+{
+    .ctask{
+        font-size: 28px; 
+        margin-left: 50px;
+        margin-right: 50px;   
+    }
+
+    #task{
+        font-size: 26px;
+        height: 75px;
+        width: 350px;
+    }
+
+    #taskstatus{
+        font-size: 26px;
+        height: 37px;
+        width: 350px;
+    }
+    
+    .ctbutton{
+        font-size: 26px;
+        height: 37px;
+        width: 350px
+    }
+
+    
+
+}
+
+@media(max-width: 768px){
+    .navbar{
+        font-size: 26px;
+    }
+
+    #logo, #navlinks{
+        font-size: 26px;
+    }
+
+    .card{
+        align-self: center;
+        font-size: 26px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .ctask{
+        font-size: 26px; 
+        margin-left: 100px;
+        margin-right: 100px;   
+    }
+
+    #task{
+        font-size: 26px;
+        height: 75px;
+        width: 350px;
+    }
+
+    #taskstatus{
+        font-size: 26px;
+        height: 40px;
+        width: 300px;
+    }
+    
+    .ctbutton{
+        font-size: 20px;
+        height: 40px;
+        width: 350px
+    }
+}
+
+@media(max-width: 576px){
+    .navbar{
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    #logo, #navlinks{
+        font-size: 20px;
+    }
+
+    .card{
+        align-self: center;
+        font-size: 24px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .ctask{
+        font-size: 20px; 
+        margin-left: 50px;
+        margin-right: 50px;   
+    }
+
+    #task{
+        font-size: 20px;
+        height: 50px;
+        width: 250px;
+    }
+
+    #taskstatus{
+        font-size: 20px;
+        height: 30px;
+        width: 200px;
+    }
+    
+    .ctbutton{
+        font-size: 20px;
+        height: 30px;
+        width: 250px
+    }
+}
+
+
+
+
