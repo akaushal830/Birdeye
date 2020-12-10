@@ -25,14 +25,14 @@
             Abhishek
         </span>
     </header>
-    <section class="lists">
+    <section class="lists" id="hs">
             <% for(t of tasks) { %>
                 <% if(t.taskStatus === 'Pending'){ %>
-                    <div class="pending card" id="pc" onclick="showDetails('<%= t.taskId %>')"><%= t.task %></div>
+                    <div class="pending card" id="<%= t.taskId %>"><%= t.task %></div>
                     <!-- <a href = '/todo/<%= t.taskId%>' >Details</a> -->
                 <% } %>
                 <% if(t.taskStatus === 'Completed'){ %>
-                    <div class="completed card" id="pc"><%= t.task %></div>
+                    <div class="completed card" id="<%= t.taskId %>"><%= t.task %></div>
                     <!-- <a href = '/todo/<%= t.taskId%>'>Details</a> -->
                 <% } %>
             <% } %>

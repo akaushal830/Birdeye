@@ -27,9 +27,9 @@
             Abhishek
         </span>
     </header>
-    <section class="ctask">
+    <section class="ctask" id="sds">
         <div>
-            <span class="info">Task ID: </span><span><%= task.taskId %></span>
+            <span class="info">Task ID: </span><span id="edid"><%= task.taskId %></span>
         </div>
         <div>
             <span class="info">Task: </span><span><%= task.task %></span>
@@ -43,7 +43,7 @@
         <div>
             <span class="info">Task Last Modified Date: </span><span><%= task.taskLastModified %></span>
         </div>
-        <div id="edb" onclick="editDetails('<%= task.taskId %>')">
+        <div id="edb">
             <!-- <a href="/todo/<%= task.taskId %>/edit">Edit Task</a> -->
             Edit Task
         </div>
